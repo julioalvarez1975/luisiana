@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cumple de Luisi</title>
+
+    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="./bootstrap.min.css">
+
+    <script src='./jquery-3.6.1.min.js'></script>
+    <script src='./bootstrap.min.js'></script>
+    <script  src="./script.js"></script>
+</head>
+
+<body>
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+
+        <div id="container1">
+
+            <img src="./circulo.png" class="rotate" alt="Estrellas">
+            <img src="./tarjeta.png" class="tarjeta" alt="Tarjeta">
+        </div>
+       
+        <script lang="text/javascript">
+            window._mutedSetted = false;
+    
+            //https://deimosinc.com.ar/#!/-inicio/
+            
+            
+            // isAutoplaySupported(callback);
+                    // Test if HTML5 video autoplay is supported
+                    function isAutoplaySupported() {
+                      // Check if sessionStorage exist for autoplaySupported,
+                      // if so we don't need to check for support again
+                      if (!sessionStorage.autoplaySupported) {
+                        // Create video element to test autoplay
+                        var video = document.createElement('video');
+                        video.autoplay = true;
+                        video.src = './tema.mp3';
+                        video.load();
+                        video.style.display = 'none';
+                        video.playing = false;
+                try
+                {
+                        video.play().catch(function(){});
+                }catch(error){}
+                        // Check if video plays
+                        video.onplay = function() {
+                          this.playing = true;
+                        };
+                        // Video has loaded, check autoplay support
+                        video.oncanplay = function() {
+                          if (video.playing) {
+                            sessionStorage.autoplaySupported = 'true';
+                            window._autoplayMuted = 0;
+                          } else {
+                            sessionStorage.autoplaySupported = 'false';
+                            window._autoplayMuted = 1;
+                          }
+                          
+                          window._mutedSetted=(true);
+                          
+                          
+                        };
+                      } else {
+                        // We've already tested for support
+                        // use sessionStorage.autoplaySupported
+                        if (sessionStorage.autoplaySupported === 'true') {
+                          window._autoplayMuted = 0;
+                        } else {
+                          window._autoplayMuted = 1;
+                        }
+                        window._mutedSetted=(true);
+                        
+                      }
+                    }
+            
+                    isAutoplaySupported();
+            </script>
+
+        <div id="centrado" >
+            <audio class="audio" id="video">
+                <source src="./tema.mp3" type="audio/mp3">
+                <source src="./tema.ogg" type="audio/ogg">
+                 Navegador no compatible con el audio...
+            </audio>
+            <a><img src="./play.png" onclick="document.getElementById('video').play()" class="intermitente" alt="Toque Aquí"></a>
+        </div>
+        <!--
+        <script>
+            function play() {
+                var temazo = document.getElementById("audio");
+                temazo.play();
+            }
+        </script>
+        -->
+        <div id="container2">
+            
+            <img src="./teEspero.png" class="titilantes" alt="Poema">
+            <img src="./poema.png" class="poema" alt="Poema">
+            <img src="./estrellaCentro.png" class="estrellaCentro" alt="EstrellaCentro">
+            <img src="./centro.png" class="centro" alt="Poema">
+            
+        </div>
+
+
+
+
+        <div id="container2">
+            
+            <img src="./abajo.png" class="poema" alt="Poema">
+            
+
+            <span><h1>Faltan</h1></span>
+            <ul id="countdown">
+                
+                <li id="days">
+                <div class="number">00</div>
+                <div class="label">Días</div>
+                </li>
+                <li id="hours">
+                <div class="number">00</div>
+                <div class="label">Horas</div>
+                </li>
+                <li id="minutes">
+                <div class="number">00</div>
+                <div class="label">Minutos</div>
+                </li>
+                <li id="seconds">
+                <div class="number">00</div>
+                <div class="label">Segundos</div>
+                </li>            
+            </ul>
+
+            <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+            <script  src="./script.js"></script>
+
+        </div>
+
+        <div id="containerH">
+            <div>
+                <a href="https://goo.gl/maps/aWFNWhrUjgyZqzR16" role="ComoLlegar">
+                    <img src="./mapa.png" class="intermitente" alt="ComoLlegar"></a>
+                    <span><h6>Cómo<br> llegar</h6></span>
+            </div>
+            <div>
+                <a href="https://forms.gle/dvQF9bFk2weNpa8r8" role="Consultas">
+                    <img src="./agenda.png" class="intermitente" alt="Agendar"></a>
+                    <span><h6>Confirmar<br> Asistencia</h6></span>
+            </div>
+            <div>
+                <a href="https://api.whatsapp.com/send?phone=5492616109490"  role="Consultas">
+                    <img src="./whatsapp.png" class="intermitente" alt="Whatsapp"></a>
+                    <span><h6>Consultas<br> del Cumple</h6></span>
+            </div>
+         </div>
+         <div></div>
+
+</body>
+</html>
